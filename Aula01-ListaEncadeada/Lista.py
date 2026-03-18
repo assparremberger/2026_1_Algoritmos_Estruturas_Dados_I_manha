@@ -27,4 +27,33 @@ class Lista:
             aux.prox = nodo
         self.imprimir()
 
+    def remover(self, valor):
+        if self.inicio == None:
+            print("Lista Vazia!")
+        else:
+            removeu = False
+            if valor == self.inicio.dado:
+                self.inicio = self.inicio.prox
+                removeu = True
+            else:
+                ant = self.inicio
+                aux = self.inicio.prox
+                while aux:
+                    if valor == aux.dado:
+                        ant.prox = aux.prox
+                        removeu = True
+                        break
+                    else:
+                        ant = aux
+                        aux = aux.prox
+            if removeu:
+                print(valor, " removido!")
+            else:
+                print( valor , " não encontrado!")
+                
+            self.imprimir()
+            
+
+
+        
         
